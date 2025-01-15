@@ -1,0 +1,29 @@
+docker run: downloads and runs latest version
+docker pull: pulls a specific version
+docker image ls: shows images [--digests shows the digest tag for a specific image, pinning by digest is the only way to ensure there are no changes are introduced in your containers enviorment]
+docker ps: shows running containers
+docker ps -a: shows all containers including stopped ones
+docker logs [name/container id]
+docker stop [name/container id]
+docker container prune: will remove all stopped containers
+
+
+
+
+
+
+
+containers vs images
+images: templates for containers, it specifies the filesystem, users, default commands etc, images are what we upload and share
+containers: groups of processes, based off images 
+
+docker run nginx, going to localhost wont work, in order to interect with nginx server we need to publish the port its listening on, docker run -p(dash p flag) 80:80 nginx, can reroute ports however you like, docker run -p 5000:80 nginx makes the containers port 80 available on our port 5000  (http://localhost:5000)
+docker run -p 5000:80 -d nginx, -d detaches the container from the terminal, running it in the background
+--rm flag allows you to tell docker to remove the container as soon as it stops, docker run -p 5000:80 -d --rm nginx, then docker stop [name/id] and after stopping the container it will also be deleted thanks to --rm
+
+
+
+docker run -e ABC=123 -e DEF=456 python:3.12 python -c "import os;print(os.environ)"
+This Docker command runs a Python 3.12 container and sets two environment variables (-e), ABC and DEF, to 123 and 456 respectively. It then executes a Python command that imports the os module and prints the current environment variables
+
+https://www.youtube.com/watch?v=b0HMimUb4f0 14:30
