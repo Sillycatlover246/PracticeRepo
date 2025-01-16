@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List with Delete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .item button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .item button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic List</h1>
+    <input type="text" id="itemInput" placeholder="Enter an item">
+    <button id="addItemButton">Add Item</button>
+    <ul id="itemList"></ul>
+
+    <script>
+        document.getElementById('addItemButton').addEventListener('click', function() {
+            const input = document.getElementById('itemInput');
+            const itemText = input.value.trim();
+
+            if (itemText !== '') {
+                const list = document.getElementById('itemList');
+                const listItem = document.createElement('li');
+                listItem.className = 'item';
+
+                const textNode = document.createTextNode(itemText);
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Delete';
+                deleteButton.addEventListener('click', function() {
+                    list.removeChild(listItem);
+                });
+
+                listItem.appendChild(textNode);
+                listItem.appendChild(deleteButton);
+                list.appendChild(listItem);
+
+                input.value = '';
+            } else {
+                alert('Please enter a valid item.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -10,9 +10,6 @@ docker container prune: will remove all stopped containers
 
 
 
-
-
-
 containers vs images
 images: templates for containers, it specifies the filesystem, users, default commands etc, images are what we upload and share
 containers: groups of processes, based off images 
@@ -26,4 +23,20 @@ docker run -p 5000:80 -d nginx, -d detaches the container from the terminal, run
 docker run -e ABC=123 -e DEF=456 python:3.12 python -c "import os;print(os.environ)"
 This Docker command runs a Python 3.12 container and sets two environment variables (-e), ABC and DEF, to 123 and 456 respectively. It then executes a Python command that imports the os module and prints the current environment variables
 
-https://www.youtube.com/watch?v=b0HMimUb4f0 14:30
+slim & alpine images
+docker pull python:3.12 = 1.01GB
+docker pull python:3.12-slim = 124.34MB
+docker pull python:3.12-alpine = 48.26MB
+the alpine version is very small but also very different, not being debian based linux, and instead of the default shell being bash, its default shell is ash, uses apk instead of apt packages etc.
+
+
+debugging containers
+docker exac -it: allows you the execute a process on a running container
+
+
+
+presistence relevent to databases in my case
+docker run python:3.12 python -c 'f="/data.txt";open(f, a).write(f"freaky!\n");print(open(f).read()) this command will open a file, write freaky! and print it, however everytime you run it we will see 1 copy of freaky! since its starting clean every time
+-v (volume)
+mkdir mydata
+docker run -v mydata:/data python:3.12 python -c 'f="data/data.txt";open(f, a).write(f"freaky!\n");print(open(f).read()) with the changes made, now the /data directory is populated by a volume (-v) beyond the life cycle of the container
