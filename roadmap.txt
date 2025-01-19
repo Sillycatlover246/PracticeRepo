@@ -1,0 +1,14 @@
+_______________________
+|learning linux basics| ---> Ubuntu ---> Learning to use the terminal
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾                               
+Basic CLI:                                          File System:                               Process Mgmt:                    Package Mgmt:               Bash Scripting:                                 
+ls, cd, pwd (navigation)                            chmod, chown (Permissions)                 ps, kill, top, htop              apt, yum                    Simple Bash Scripts, Command Subs
+who, users, groups (Users/Groups)                   cp, mv, rm, touch (File Mgmt)                                                                           .bashrc
+env, export (Local Enviorment)                      df, du (Disk Usage) 
+su, sudo (Switch user/Superuser)                                      
+
+
+
+____________________________________
+|Cloud Basics / System Architecture| ---> AWS / Azure / Google Cloud
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
