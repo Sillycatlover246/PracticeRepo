@@ -40,3 +40,7 @@ docker run python:3.12 python -c 'f="/data.txt";open(f, a).write(f"freaky!\n");p
 -v (volume)
 mkdir mydata
 docker run -v mydata:/data python:3.12 python -c 'f="data/data.txt";open(f, a).write(f"freaky!\n");print(open(f).read()) with the changes made, now the /data directory is populated by a volume (-v) beyond the life cycle of the container
+
+
+docker compose
+docker compose manages compositions in a real app such as: Frontend, Backend, Database, Loadbalancer, Cache, Task Queue

@@ -1,0 +1,27 @@
+services:
+#specify each component as a seperate key 
+    backend:
+      image: htmlsite-backend
+      pull_policy: never #this avoids pulling an image from dockerhub with the same name
+      container-name: htmlsite-backend
+      build:
+        context: ./backend 
+        dockerfile: Dockerfile 
+        target: runner
+      ports:
+        - "8000:8000"
+
+frontend:
+  image: htmlsite-frontend
+  pull_policy: never
+  container-name: htmlsite-frontend
+  build:
+    context: ./frontend
+    dockerfile: Dockerfile
+  ports:
+    - "80:80"
+    #docker compose build
+    #docker compose up
+    #docker compose down - to shut down and delete the containers
+    #docker compose stop - to stop the containers
+    #docker compose start
