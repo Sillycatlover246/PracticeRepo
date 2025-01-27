@@ -1,0 +1,2 @@
+Download jenkins on docker locally! yippie! https://www.jenkins.io/doc/book/installing/docker/
+
