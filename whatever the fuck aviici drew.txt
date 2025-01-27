@@ -1,0 +1,9 @@
+https://imgur.com/a/OFY3ddS
+Github---Github actions ->  runner                            
+                               |
+                            ___|___    ______
+                            |clone|    |curl|
+                            |build| -> |test| -> kubectl -|
+                            |push |    ‾‾‾‾‾‾             |-> k8s [production]
+                            ‾‾‾‾‾‾‾    bandit             |   [ec2] 
+                                       selenium -> helm --|
