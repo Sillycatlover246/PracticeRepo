@@ -25,3 +25,4 @@ frontend:
     #docker compose down - to shut down and delete the containers
     #docker compose stop - to stop the containers
     #docker compose start
+    #dis shit doesnt work :sob:
